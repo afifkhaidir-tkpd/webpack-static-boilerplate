@@ -90,6 +90,7 @@ const webpackConfig = {
           loader: 'html-loader',
           options: {
             attrs: ['img:src', 'video:src'],
+            interpolate: true,
           },
         }],
       },
