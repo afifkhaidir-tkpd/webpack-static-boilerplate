@@ -49,7 +49,12 @@ const webpackConfig = {
       },
       {
         test: /\.jsx?$/,
-        use: ['babel-loader'],
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['es2015'],
+          },
+        },
       },
       {
         test: /\.(png|jpe?g|gif)$/,
@@ -90,6 +95,7 @@ const webpackConfig = {
           loader: 'html-loader',
           options: {
             attrs: ['img:src', 'video:src'],
+            interpolate: true,
           },
         }],
       },
