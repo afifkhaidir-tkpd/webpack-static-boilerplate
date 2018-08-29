@@ -49,7 +49,12 @@ const webpackConfig = {
       },
       {
         test: /\.jsx?$/,
-        use: ['babel-loader'],
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['es2015'],
+          },
+        },
       },
       {
         test: /\.(png|jpe?g|gif)$/,
