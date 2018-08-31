@@ -102,7 +102,7 @@ const initPivot = () => {
 
       pivotEnterTimeout = setTimeout(() => {
         pivotContainer.classList.add('pivot-container--active');
-        overlay.style.display = 'block';
+        overlay.classList.add('active');
       }, pivotDelay);
     });
 
@@ -111,7 +111,7 @@ const initPivot = () => {
 
       pivotLeaveTimeout = setTimeout(() => {
         pivotContainer.classList.remove('pivot-container--active');
-        overlay.style.display = 'none';
+        overlay.classList.remove('active');
       }, pivotDelay);
     });
   });
