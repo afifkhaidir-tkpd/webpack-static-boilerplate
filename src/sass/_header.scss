@@ -1,4 +1,17 @@
 .top-navigation {
+  &.green {
+    background: #42b549;
+    a {
+      background: url('../assets/img-tokopedia-logo.png') no-repeat;
+      background-size: contain;
+      background-position: center;
+    }
+    .pivot-button {
+      background: url('https://ecs7.tokopedia.net/assets/images/ic_menu.png');
+      background-size: contain;
+      background-position: center;
+    }
+  }
   position: relative;
   top: 0;
   left: 0;
