@@ -1,31 +1,41 @@
-
 // Responsive
-
 @mixin breakpoint($class) {
-  @if $class == xxs {
-    @media (max-width: 480px) { @content; }
-  }
-  
-  @else if $class == xs {
-    @media (max-width: 767px) { @content; }
-  }
- 
-  @else if $class == sm {
-    @media (min-width: 768px) { @content; }
-  }
- 
-  @else if $class == md {
-    @media (min-width: 992px) { @content; }
+  @if $class==xxs {
+    @media (max-width: 480px) {
+      @content;
+    }
   }
 
-  @else if $class == smd {
-    @media (max-width: 992px) { @content; }
+  @else if $class==xs {
+    @media (max-width: 767px) {
+      @content;
+    }
   }
- 
-  @else if $class == lg {
-    @media (min-width: 1200px) { @content; }
+
+  @else if $class==sm {
+    @media (min-width: 768px) {
+      @content;
+    }
   }
- 
+
+  @else if $class==md {
+    @media (min-width: 992px) {
+      @content;
+    }
+  }
+
+  @else if $class==smd {
+    @media (max-width: 992px) {
+      @content;
+    }
+  }
+
+  @else if $class==lg {
+    @media (min-width: 1200px) {
+      @content;
+    }
+  }
+
   @else {
     @warn "Breakpoint mixin supports: xs, sm, md, lg";
   }
@@ -34,12 +44,14 @@
 // Keyframes Animation
 @mixin keyframes($animation-name) {
   @-webkit-keyframes #{$animation-name} {
-      @content;
+    @content;
   }
+
   @-moz-keyframes #{$animation-name} {
-      @content;
+    @content;
   }
+
   @keyframes #{$animation-name} {
-      @content;
+    @content;
   }
 }

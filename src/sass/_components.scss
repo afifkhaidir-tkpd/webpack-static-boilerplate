@@ -8,31 +8,38 @@
   margin-left: -15px;
   margin-right: -15px;
   margin-bottom: 50px;
+
   .col-md-4 {
     position: relative;
     width: 33.333333%;
     padding: 15px;
-    &:hover .components-copy-btn{
+
+    &:hover .components-copy-btn {
       transform: scale(1);
     }
   }
+
   .col-md-6 {
     position: relative;
     width: 50%;
     padding: 15px;
-    &:hover .components-copy-btn{
+
+    &:hover .components-copy-btn {
       transform: scale(1);
     }
   }
+
   .col-md-12 {
     position: relative;
     width: 100%;
     padding: 15px;
-    &:hover .components-copy-btn{
+
+    &:hover .components-copy-btn {
       transform: scale(1);
     }
   }
 }
+
 .components-copy-btn {
   position: absolute;
   top: 15px;
@@ -68,10 +75,10 @@
 //     }
 //   }
 // }
-
 .unify-ripple-green {
   background-position: center;
   transition: background 0.8s;
+
   &:active {
     background: rgba(66, 181, 73, .2);
     background-size: 100%;
@@ -83,44 +90,63 @@
   border-radius: 4px;
   background-color: white;
   box-shadow: 0 2px 6px 0.5px rgba(0, 0, 0, 0.12);
+
   &__image {
     display: block;
+
     &--top {
       width: 100%;
     }
+
     &--left {
       display: inline-block;
     }
   }
+
   &__content {
-    &--left-icon, &--right-content, &--right-icon, &--left-content {
+
+    &--left-icon,
+    &--right-content,
+    &--right-icon,
+    &--left-content {
       display: inline-block;
       margin-right: -4px;
       vertical-align: middle;
     }
-    &--left-icon, &--right-icon{
+
+    &--left-icon,
+    &--right-icon {
       width: 20%;
-      & img{
+
+      & img {
         width: 80%;
       }
     }
+
     &--right-icon {
       text-align: right;
+
       &-expand {
         width: 15px;
-        & img{
+
+        & img {
           width: 100%;
         }
       }
     }
-    &--right-content, &--left-content{
+
+    &--right-content,
+    &--left-content {
       width: 80%;
+
       &-expand {
         width: calc(100% - 15px);
         padding-right: 15px;
       }
     }
+
     padding: 16px;
+
     &-title {
       margin-top: 0;
       font-size: 1.14286rem;
@@ -128,34 +154,42 @@
       margin-bottom: 10px;
       font-weight: 600;
     }
+
     &-description {
       color: rgba(0, 0, 0, 0.54);
       font-size: 1rem;
       line-height: 1.5;
       margin: 0;
+
       &.expandable {
         // margin-top: 10px;
         display: none;
       }
     }
-    &--expandable{
+
+    &--expandable {
       padding: 16px;
     }
   }
+
   &__buttons {
     margin-top: 16px;
+
     &--right {
       text-align: right;
     }
+
     &-container {
       padding: 10px 16px;
     }
-    &--block{
-      button{
+
+    &--block {
+      button {
         display: block;
         margin-left: auto;
       }
     }
+
     .unify-icon {
       vertical-align: middle;
       width: 32px;
@@ -163,8 +197,10 @@
       cursor: pointer;
     }
   }
+
   .expandable {
     display: none;
+
     .unify-card__buttons {
       padding: 16px;
       padding-top: 0;
@@ -175,70 +211,87 @@
 .unify-form-input__container {
   .unify-form-input {
     transition: all .3s ease;
+
     &[disabled] {
       background: #f1f1f1;
       cursor: not-allowed;
     }
-    &::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+
+    &::placeholder {
+      /* Chrome, Firefox, Opera, Safari 10.1+ */
       color: rgba(0, 0, 0, .38);
-      opacity: 1; /* Firefox */
+      opacity: 1;
+      /* Firefox */
     }
-    
-    &:-ms-input-placeholder { /* Internet Explorer 10-11 */
+
+    &:-ms-input-placeholder {
+      /* Internet Explorer 10-11 */
       color: rgba(0, 0, 0, .38);
     }
-    
-    &::-ms-input-placeholder { /* Microsoft Edge */
+
+    &::-ms-input-placeholder {
+      /* Microsoft Edge */
       color: rgba(0, 0, 0, .38);
     }
+
     &__info {
       transition: transform .3s ease, opacity .3s ease;
       transform: translateY(0);
       opacity: 1;
+
       &--hidden {
         opacity: 0 !important;
         transform: translateY(100%);
       }
+
       &-container {
         position: relative;
         overflow: hidden;
         padding-bottom: 3px;
       }
+
       font-size: 12px;
       opacity: .54;
       font-weight: 600;
       margin-top: 8px;
+
       &--error {
         opacity: 1;
         color: #E98667;
       }
+
       &--success {
         opacity: 1;
         color: #42B549;
       }
+
       &--counter {
         position: absolute;
-        top: 5px; 
+        top: 5px;
         right: 0;
-        color: rgba(0,0,0, .3);
+        color: rgba(0, 0, 0, .3);
         font-weight: 600;
       }
     }
+
     &__label {
       opacity: .7;
       font-size: 13px;
       margin-bottom: 8px;
       font-weight: 600;
       transition: color .3s ease, opacity .3s ease;
+
       &--success {
         color: #42B549;
         opacity: 1;
       }
+
       &--error {
         color: #EB8D70;
         opacity: 1;
       }
     }
+
     &__text {
       width: 100%;
       border-radius: 3px;
@@ -247,23 +300,28 @@
       padding: 10px;
       font-size: 14px;
     }
+
     &:not([success]):not([error]):focus {
       box-shadow: 0 0 0 1px #42B549;
       border: 1px solid #42B549;
     }
+
     &[success] {
       box-shadow: 0 0 0 1px #8BC582;
       border: 1px solid #8BC582;
     }
+
     &[error] {
       box-shadow: 0 0 0 1px #EB8D70;
       border: 1px solid #EB8D70;
     }
+
     &[dropdown-menu] {
       cursor: pointer;
       padding-right: 30px;
     }
   }
+
   .unify-dropdown-icon {
     position: absolute;
     top: 50%;
@@ -286,11 +344,13 @@
     top: calc(100% + 3px);
     border-radius: 4px;
     font-size: 14px;
-    color: rgba(0,0,0, .7);
+    color: rgba(0, 0, 0, .7);
     z-index: 4;
     display: none;
+
     ul {
       position: relative;
+
       .dropdown-indicator {
         position: absolute;
         background-color: #eff9ef;
@@ -301,14 +361,16 @@
         transition: top .2s ease, height .2s ease;
         display: none;
       }
-      & > li {
+
+      &>li {
         padding: 15px 20px;
         cursor: pointer;
         position: relative;
         z-index: 5;
-        transition: color .15s ease, opacity .15s ease; 
+        transition: color .15s ease, opacity .15s ease;
         opacity: .7;
         font-size: 14px;
+
         &:hover {
           color: #0a9b14;
           opacity: 1;
@@ -317,6 +379,7 @@
     }
   }
 }
+
 /*
 SELECTOR CSS START
 */
@@ -324,13 +387,14 @@ SELECTOR CSS START
   width: 0px;
   height: 0px;
   border-radius: 16px;
-  transition: width 0.26s ease,height 0.25s ease;
+  transition: width 0.26s ease, height 0.25s ease;
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%, -50%);
   background-image: linear-gradient(to bottom, #42b549, #87d58b);
 }
+
 %shadowHover {
   width: 0px;
   height: 0px;
@@ -339,32 +403,41 @@ SELECTOR CSS START
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%, -50%);
   transition: width 0.4s, height 0.4s;
   z-index: -1;
 }
+
 %bgGradGray {
   background-image: linear-gradient(to top, #e9e9e9, #e0e0e0);
 }
+
 .unify-form-selector--container {
   color: rgba(0, 0, 0, 0.54);
+
   .unify-form-selector--wrapper {
-    margin-bottom: 42px;  
+    margin-bottom: 42px;
   }
+
   .unify-form-selector--title {
     color: rgba(0, 0, 0, 0.7);
     font-size: 14px;
     font-weight: 600;
     margin-bottom: 16px;
   }
+
   .unify-form-selector__option {
     margin-bottom: 20px;
     display: block;
+
     // because radiobutton and checkbox have similar style.
-    input[type="radio"], input[type="checkbox"] {
+    input[type="radio"],
+    input[type="checkbox"] {
       position: absolute;
       left: -999999px;
-      &+.unify-form-selector__radio, &+.unify-form-selector__checkbox {
+
+      &+.unify-form-selector__radio,
+      &+.unify-form-selector__checkbox {
         width: 20px;
         height: 20px;
         border: solid 1.2px #bdbdbd;
@@ -375,23 +448,28 @@ SELECTOR CSS START
         border-radius: 10px;
         position: relative;
         transition: border-color 0.6s ease;
+
         .unify-form-selector__shadow {
           @extend %shadowHover;
         }
+
         &:hover .unify-form-selector__shadow {
           width: 40px;
           height: 40px;
         }
       }
+
       //radio only
       &+.unify-form-selector__radio {
         .unify-form-selector__radio-bg {
-          @extend %bgRadioAndCheck; 
+          @extend %bgRadioAndCheck;
         }
       }
+
       //checkbox only
       &+.unify-form-selector__checkbox {
         border-radius: 2px;
+
         .unify-form-selector__check {
           width: 7px;
           height: 11px;
@@ -403,63 +481,79 @@ SELECTOR CSS START
           transform: rotateY(90deg);
           transition: transform 0.25s;
         }
+
         .unify-form-selector__checkbox-bg {
-          @extend %bgRadioAndCheck;   
-        }  
+          @extend %bgRadioAndCheck;
+        }
       }
+
       //checked radio+checkbox status
-      &:checked+.unify-form-selector__radio, &:checked+.unify-form-selector__checkbox {
+      &:checked+.unify-form-selector__radio,
+      &:checked+.unify-form-selector__checkbox {
         border-color: #42b549;
+
         .unify-form-selector__radio-bg {
           width: 15px;
           height: 15px;
         }
+
         .unify-form-selector__checkbox-bg {
           width: 20px;
           height: 20px;
           border-radius: 2px;
         }
-        &:hover .unify-form-selector__shadow{
+
+        &:hover .unify-form-selector__shadow {
           width: 0px;
           height: 0px;
         }
+
         .unify-form-selector__check {
           transform: rotateZ(45deg) rotateY(0deg);
         }
       }
+
       &:checked+.unify-form-selector__checkbox {
         border-color: transparent;
       }
+
       //disabled radio+checkbox  status
-      &:disabled+.unify-form-selector__radio,&:disabled+.unify-form-selector__checkbox {
+      &:disabled+.unify-form-selector__radio,
+      &:disabled+.unify-form-selector__checkbox {
         border-color: #e6e6e6;
+
         .unify-form-selector__radio-bg {
           width: 15px;
           height: 15px;
           @extend %bgGradGray;
         }
+
         .unify-form-selector__checkbox-bg {
           width: 20px;
           height: 20px;
-          border-radius: 2px; 
+          border-radius: 2px;
           @extend %bgGradGray;
         }
+
         .unify-form-selector__check {
           transform: rotateZ(45deg) rotateY(0deg);
         }
+
         &:hover .unify-form-selector__shadow {
           width: 0px;
           height: 0px;
         }
       }
     }
+
     /* specific for toggle button */
     &.unify-form-selector__option--togglebox {
-      > span {
-          margin-right: 72px;
-          display: inline-block;
-          vertical-align: middle;
-      } 
+      >span {
+        margin-right: 72px;
+        display: inline-block;
+        vertical-align: middle;
+      }
+
       .unify-form-selector__toggle-button {
         width: 22px;
         height: 22px;
@@ -472,7 +566,9 @@ SELECTOR CSS START
         left: 0px;
         transition: left 0.3s cubic-bezier(0.77, 0, 0.175, 1), border-color 0.3s ease;
       }
-      .unify-form-selector__toggle-button__cross-left,.unify-form-selector__toggle-button__cross-right {
+
+      .unify-form-selector__toggle-button__cross-left,
+      .unify-form-selector__toggle-button__cross-right {
         width: 1.6px;
         height: 11px;
         background: #bdbdbd;
@@ -480,15 +576,18 @@ SELECTOR CSS START
         transform: rotateZ(-45deg);
         top: 6px;
         left: 9px;
-        transition: left 0.3s ease,top 0.3s ease, width 0.3s ease,height 0.3s ease;
+        transition: left 0.3s ease, top 0.3s ease, width 0.3s ease, height 0.3s ease;
       }
+
       .unify-form-selector__toggle-button__cross-right {
         transform: rotateZ(45deg);
         left: 9px;
       }
+
       .unify-form-selector__shadow {
-          @extend %shadowHover;
+        @extend %shadowHover;
       }
+
       .unify-form-selector__bg-green {
         position: absolute;
         top: 0;
@@ -500,6 +599,7 @@ SELECTOR CSS START
         opacity: 0;
         border-radius: 11px;
       }
+
       .unify-form-selector__bg-gray {
         position: absolute;
         top: 0;
@@ -511,6 +611,7 @@ SELECTOR CSS START
         opacity: 1;
         border-radius: 11px;
       }
+
       .unify-form-selector__togglebox {
         width: 40px;
         height: 20px;
@@ -521,54 +622,65 @@ SELECTOR CSS START
         transition: background-image 2s ease-in-out;
         cursor: pointer;
       }
+
       // toggle checked
-      input[type="checkbox"]:checked + .unify-form-selector__togglebox {
+      input[type="checkbox"]:checked+.unify-form-selector__togglebox {
         .unify-form-selector__toggle-button {
           border: solid 0.5px #42b549;
           left: 18px;
         }
-        .unify-form-selector__toggle-button__cross-left,.unify-form-selector__toggle-button__cross-right {
+
+        .unify-form-selector__toggle-button__cross-left,
+        .unify-form-selector__toggle-button__cross-right {
           height: 6px;
           background: #42b549;
           transform: rotateZ(-45deg);
           top: 9px;
           left: 6px;
         }
+
         .unify-form-selector__toggle-button__cross-right {
           transform: rotateZ(45deg);
           height: 10px;
           left: 11px;
           top: 6px;
         }
+
         .unify-form-selector__bg-green {
           opacity: 1;
         }
+
         .unify-form-selector__bg-gray {
           opacity: 0;
         }
       }
+
       // toggle disabled
-      input[type="checkbox"]:disabled + .unify-form-selector__togglebox {
+      input[type="checkbox"]:disabled+.unify-form-selector__togglebox {
         .unify-form-selector__toggle-button {
           left: 18px;
         }
+
         .unify-form-selector__toggle-button__cross-left {
           height: 6px;
           transform: rotateZ(-45deg);
           top: 9px;
           left: 6px;
         }
+
         .unify-form-selector__toggle-button__cross-right {
           transform: rotateZ(45deg);
           height: 10px;
           left: 11px;
           top: 6px;
         }
+
         .unify-form-selector__shadow {
           width: 0px;
           height: 0px;
         }
       }
+
       &:hover .unify-form-selector__shadow {
         width: 40px;
         height: 40px;
@@ -576,82 +688,89 @@ SELECTOR CSS START
     }
   }
 }
+
 /*
 SELECTOR CSS END
 */
 .unify-tab--container {
+  .unify-tab__container {
+    .unify-tab-tabs {
+      position: relative;
+      border-bottom: 1px solid #e3e3e3;
 
-.unify-tab__container {
-  .unify-tab-tabs {
+      .unify-tab {
+        font-size: 17px;
+        color: rgba(0, 0, 0, .54);
+        padding: 15px 20px;
+        display: inline-block;
+        margin-right: -4px;
+        cursor: pointer;
+        transition: color .3s ease, background-color .3s ease;
+
+        &--active {
+          color: #42B549;
+        }
+
+        &:not(.unify-tab--active):hover {
+          background-color: #EDFEEE;
+          color: #42B549;
+        }
+      }
+
+      .unify-tab-thumb {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        height: 3px;
+        background-color: #399C3F;
+        transition: width .3s ease, left .3s ease;
+      }
+    }
+  }
+
+  .unify-tab__content-wrapper {
+    .unify-tab__content-container {
+      display: none;
+
+      &:first-child {
+        display: block;
+      }
+    }
+  }
+
+  .unify-placeholder {
+    &__image {
+      background-color: #eee;
+      border-radius: 4px;
+      height: 150px;
+    }
+
+    &__line {
+      background-color: #eee;
+      border-radius: 4px;
+      height: 14px;
+      margin-top: 8px;
+
+      &--small {
+        width: 30%;
+      }
+
+      &--medium {
+        width: 60%;
+      }
+    }
+  }
+
+  .unify-divider {
+    height: 1px;
+    background: #E0E0E0;
+  }
+
+  .no-margin {
+    margin: 0;
+  }
+
+  .unify-relative {
     position: relative;
-    border-bottom: 1px solid #e3e3e3;
-    .unify-tab {
-      font-size: 17px;
-      color: rgba(0,0,0, .54);
-      padding: 15px 20px;
-      display: inline-block;
-      margin-right: -4px;
-      cursor: pointer;
-      transition: color .3s ease, background-color .3s ease;
-      &--active {
-        color: #42B549;
-      }
-      &:not(.unify-tab--active):hover {
-        background-color: #EDFEEE;
-        color: #42B549;
-      }
-    }
-    .unify-tab-thumb {
-      position: absolute;
-      left: 0;
-      bottom: 0;
-      height:3px;
-      background-color: #399C3F;
-      transition: width .3s ease, left .3s ease;
-    }
   }
-}
-
-.unify-tab__content-wrapper {
-  .unify-tab__content-container {
-    display: none;
-    &:first-child {
-      display: block;
-    }
-  }
-}
-
-.unify-placeholder {
-  &__image  {
-    background-color: #eee;
-    border-radius: 4px;
-    height: 150px;
-  }
-  &__line{
-    background-color: #eee;
-    border-radius: 4px;
-    height: 14px;
-    margin-top: 8px;
-    &--small {
-      width: 30%;
-    }
-    &--medium {
-      width: 60%;
-    }
-  }
-}
-
-.unify-divider {
-  height: 1px;
-  background: #E0E0E0;
-}
-
-.no-margin {
-  margin: 0;
-}
-
-.unify-relative {
-  position: relative;
-}
-
 }

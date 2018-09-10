@@ -8,6 +8,7 @@ body {
   margin: 0;
   color: #333;
   background-color: #fff;
+
   &.fixed {
     overflow: hidden;
   }
@@ -31,23 +32,28 @@ body {
   padding-left: 15px;
   margin-right: auto;
   margin-left: auto;
+
   @include breakpoint(sm) {
     width: 750px;
   }
+
   @include breakpoint(md) {
     width: 970px;
   }
+
   @include breakpoint(lg) {
     width: 1170px;
   }
 }
 
 .clearfix {
+
   &:before,
   &:after {
     display: table;
     content: ' ';
   }
+
   &:after {
     clear: both;
   }

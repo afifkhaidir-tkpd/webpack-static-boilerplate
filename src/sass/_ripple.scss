@@ -2,91 +2,91 @@
   Material Design Ripple Effect - by Ravikumar Chauhan
 ------------------------------------------------------------------------- */
 .ripple-effect {
-    display: inline-block;
-    position: relative;
-    overflow: hidden;
-    cursor: pointer;
-    vertical-align: middle;
-    user-select: none;
-    z-index: 1;
-  
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  vertical-align: middle;
+  user-select: none;
+  z-index: 1;
+
+  .ripple {
+    display: block;
+    position: absolute;
+    border-radius: 100%;
+    background: rgba(255, 255, 255, 0.5);
+    transform: scale(0);
+    pointer-events: none;
+  }
+
+  &.ripple-dark {
     .ripple {
-      display: block;
-      position: absolute;
-      border-radius: 100%;
-      background: rgba(255,255,255,0.5);
-      transform: scale(0);
-      pointer-events: none;
-    }
-  
-    &.ripple-dark {
-      .ripple {
-        background: rgba(0,0,0,0.1) !important;
-      }
-    }
-  
-    &.ripple-red {
-      .ripple {
-        background: rgba(244,67,54,0.725) !important;
-      }
-    }
-  
-    &.ripple-orange {
-      .ripple {
-        background: rgba(255,152,0,0.725) !important;
-      }
-    }
-  
-    &.ripple-yellow {
-      .ripple {
-        background: rgba(255,235,59,0.725) !important;
-      }
-    }
-  
-    &.ripple-green {
-      .ripple {
-        background: rgba(76,175,80,0.725) !important;
-      }
-    }
-  
-    &.ripple-purple {
-      .ripple {
-        background: rgba(156,39,176,0.725) !important;
-      }
-    }
-  
-    &.ripple-teal {
-      .ripple {
-        background: rgba(0,150,136,0.725) !important;
-      }
-    }
-  
-    &.ripple-pink {
-      .ripple {
-        background: rgba(233,30,99,0.725) !important;
-      }
-    }
-
-    &.ripple-main {
-      .ripple {
-        background: rgba(0, 0, 0, 0.1) !important;
-      }
-    }
-
-    &.ripple-secondary {
-      .ripple {
-        background: #C6F2C8 !important;
-      }
-    }
-  
-    .animated {
-      animation: ripple 0.6s linear;
-    }
-  
-    @include keyframes('ripple') {
-      100% {
-        opacity: 0;
-        transform: scale(2.5);
-      }
+      background: rgba(0, 0, 0, 0.1) !important;
     }
   }
+
+  &.ripple-red {
+    .ripple {
+      background: rgba(244, 67, 54, 0.725) !important;
+    }
+  }
+
+  &.ripple-orange {
+    .ripple {
+      background: rgba(255, 152, 0, 0.725) !important;
+    }
+  }
+
+  &.ripple-yellow {
+    .ripple {
+      background: rgba(255, 235, 59, 0.725) !important;
+    }
+  }
+
+  &.ripple-green {
+    .ripple {
+      background: rgba(76, 175, 80, 0.725) !important;
+    }
+  }
+
+  &.ripple-purple {
+    .ripple {
+      background: rgba(156, 39, 176, 0.725) !important;
+    }
+  }
+
+  &.ripple-teal {
+    .ripple {
+      background: rgba(0, 150, 136, 0.725) !important;
+    }
+  }
+
+  &.ripple-pink {
+    .ripple {
+      background: rgba(233, 30, 99, 0.725) !important;
+    }
+  }
+
+  &.ripple-main {
+    .ripple {
+      background: rgba(0, 0, 0, 0.1) !important;
+    }
+  }
+
+  &.ripple-secondary {
+    .ripple {
+      background: #C6F2C8 !important;
+    }
+  }
+
+  .animated {
+    animation: ripple 0.6s linear;
+  }
+
+  @include keyframes('ripple') {
+    100% {
+      opacity: 0;
+      transform: scale(2.5);
+    }
+  }
+}
