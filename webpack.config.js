@@ -8,10 +8,12 @@ const publicDir = (isProduction && userConfig.cdn.upload) ?
   '/';
 
 const CleanWebpackPlugin = require('clean-webpack-plugin');
+const HtmlCriticalWebpackPlugin = require('html-critical-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const S3Plugin = require('webpack-s3-plugin');
+const ScriptExtHtmlWebpackPlugin = require('script-ext-html-webpack-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
 const webpackConfig = {
@@ -94,8 +96,10 @@ const webpackConfig = {
         use: [{
           loader: 'html-loader',
           options: {
-            attrs: ['img:src', 'video:src'],
+            attrs: ['img:src', 'video:src', 'img:data-src'],
             interpolate: true,
+            minimize: isProduction,
+            removeComments: isProduction,
           },
         }],
       },
@@ -122,8 +126,25 @@ const webpackConfig = {
 
 if (userConfig.html.length !== 0) {
   webpackConfig.plugins = webpackConfig.plugins
-    .concat(userConfig.html
-      .map(htmlConfig => new HtmlWebpackPlugin(htmlConfig)));
+    .concat(userConfig.html.map(htmlConfig => new HtmlWebpackPlugin(htmlConfig)))
+    .concat([new ScriptExtHtmlWebpackPlugin({ defaultAttribute: 'async' })]);
+
+  if (isProduction) {
+    webpackConfig.plugins = webpackConfig.plugins
+      .concat(userConfig.html.map(htmlConfig => new HtmlCriticalWebpackPlugin({
+        base: path.resolve(__dirname, 'dist'),
+        src: htmlConfig.filename,
+        dest: htmlConfig.filename,
+        inline: true,
+        minify: true,
+        extract: true,
+        width: 375,
+        height: 565,
+        penthouse: {
+          blockJSRequests: false,
+        },
+      })));
+  }
 }
 
 if (userConfig.jquery) {
