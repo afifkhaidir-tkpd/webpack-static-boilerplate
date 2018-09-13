@@ -3,9 +3,10 @@ const webpack = require('webpack');
 const userConfig = require('./config');
 
 const isProduction = process.env.NODE_ENV === 'production';
-const publicDir = (isProduction && userConfig.cdn.upload) ?
-  (userConfig.cdn.options.domain + userConfig.cdn.options.directory) :
-  '/';
+let publicDir = '/';
+if (isProduction) {
+  publicDir = userConfig.cdn.upload ? (userConfig.cdn.options.domain + userConfig.cdn.options.directory) : '';
+}
 
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const HtmlCriticalWebpackPlugin = require('html-critical-webpack-plugin');
@@ -84,6 +85,8 @@ const webpackConfig = {
           options: {
             limit: 8192,
             noquotes: true,
+            name: '[name].[ext]',
+            outputPath: 'assets/',
           },
         }],
       },
