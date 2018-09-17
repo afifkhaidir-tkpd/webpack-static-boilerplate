@@ -23,18 +23,15 @@
   background: white;
   padding: 0 24px 0 30px;
   height: 60px;
-  transition: .6s cubic-bezier(.86,0,.07,1);
+  transition: .6s cubic-bezier(.86, 0, .07, 1);
   transform: translate3d(0, -60px, 0);
 
   &.show {
     transform: translate3d(0, 0, 0);
   }
 
-  @media only screen and (max-width: 480px) {
-    background: transparent;
-  }
-
   @include breakpoint(xs) {
+    position: relative;
     text-align: center;
     padding: 0 16px;
   }
@@ -254,27 +251,27 @@
     }
 
     &-pulsa {
-      background-image: url(https://ecs7.tokopedia.net/img/icon_tokopedia-pulsa@2x.png);
+      background-image: url("https://ecs7.tokopedia.net/img/icon_tokopedia-pulsa@2x.png");
     }
 
     &-tiket {
-      background-image: url(https://ecs7.tokopedia.net/img/icon_tokopedia-tiket@2x.png);
+      background-image: url("https://ecs7.tokopedia.net/img/icon_tokopedia-tiket@2x.png");
     }
 
     &-toped {
-      background-image: url(https://ecs7.tokopedia.net/img/icon_tokopedia-toped@2x.png);
+      background-image: url("https://ecs7.tokopedia.net/img/icon_tokopedia-toped@2x.png");
     }
 
     &-official {
-      background-image: url(https://ecs7.tokopedia.net/img/icon_tokopedia-official-store@2x.png);
+      background-image: url("https://ecs7.tokopedia.net/img/icon_tokopedia-official-store@2x.png");
     }
 
     &-help {
-      background-image: url(https://ecs7.tokopedia.net/img/icon_tokopedia-bantuan@2x.png);
+      background-image: url("https://ecs7.tokopedia.net/img/icon_tokopedia-bantuan@2x.png");
     }
 
     &-donasi {
-      background-image: url(https://ecs7.tokopedia.net/img/icon_tokopedia-donasi@2x.png);
+      background-image: url("https://ecs7.tokopedia.net/img/icon_tokopedia-donasi@2x.png");
     }
   }
 }
