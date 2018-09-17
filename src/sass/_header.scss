@@ -15,7 +15,7 @@
     }
   }
 
-  position: relative;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
@@ -23,6 +23,12 @@
   background: white;
   padding: 0 24px 0 30px;
   height: 60px;
+  transition: .6s cubic-bezier(.86,0,.07,1);
+  transform: translate3d(0, -60px, 0);
+
+  &.show {
+    transform: translate3d(0, 0, 0);
+  }
 
   @media only screen and (max-width: 480px) {
     background: transparent;

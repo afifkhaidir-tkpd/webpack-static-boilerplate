@@ -1,5 +1,5 @@
 // ripple effect
-Element.prototype.rippleEffect = (e) => {
+export const rippleEffect = (e) => {
   let self;
   let size;
   let spanEl;
@@ -59,12 +59,6 @@ Element.prototype.rippleEffect = (e) => {
   });
 };
 
-export const initRippleButton = (elem) => {
-  for (let i = 0; i < elem.length; i += 1) {
-    elem[i].rippleEffect(elem[i]);
-  }
-};
-
 export const isOnViewport = (element) => {
   const windowTop = window.pageYOffset;
   const windowBottom = windowTop + window.innerHeight;
@@ -102,7 +96,7 @@ export const parallaxAnim = () => {
   }
 };
 
-export const scrollDetect = () => {
+export const scrollDetector = () => {
   const doc = document.documentElement;
   let scrollTop = (window.pageYOffset || doc.scrollTop) - (doc.clientTop || 0);
   let currTop = 0;
@@ -111,9 +105,9 @@ export const scrollDetect = () => {
     scrollTop = (window.pageYOffset || doc.scrollTop) - (doc.clientTop || 0);
     if (scrollTop > currTop) {
       currTop = scrollTop;
-      return 'down';
+      return true;
     }
     currTop = scrollTop;
-    return 'top';
+    return false;
   };
 };
