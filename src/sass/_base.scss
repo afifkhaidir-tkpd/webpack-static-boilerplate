@@ -1,12 +1,15 @@
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,600,700');
+
 html,
-body {
+body *{
   font-size: 14px;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Montserrat', sans-serif;
 }
 
 body {
   margin: 0;
-  color: #333;
+  color: rgba(0,0,0, .54);
   background-color: #fff;
 
   &.fixed {
