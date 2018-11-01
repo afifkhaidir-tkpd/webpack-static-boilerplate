@@ -103,7 +103,7 @@ export const scrollDetector = () => {
 
   return () => {
     scrollTop = (window.pageYOffset || doc.scrollTop) - (doc.clientTop || 0);
-    if (scrollTop > currTop) {
+    if (scrollTop > 0 && scrollTop > currTop) {
       currTop = scrollTop;
       return true;
     }
