@@ -1,14 +1,6 @@
 const path = require('path');
 const webpack = require('webpack');
-const userConfig = require('./config');
-
-const isProduction = process.env.NODE_ENV === 'production';
-let publicDir = '/';
-if (isProduction) {
-  publicDir = userConfig.cdn.upload ? (userConfig.cdn.options.domain + userConfig.cdn.options.directory) : '';
-}
-
-const CleanWebpackPlugin = require('clean-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlCriticalWebpackPlugin = require('html-critical-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
@@ -16,6 +8,13 @@ const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const S3Plugin = require('webpack-s3-plugin');
 const ScriptExtHtmlWebpackPlugin = require('script-ext-html-webpack-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const userConfig = require('./config');
+
+const isProduction = process.env.NODE_ENV === 'production';
+let publicDir = '/';
+if (isProduction) {
+  publicDir = userConfig.cdn.upload ? (userConfig.cdn.options.domain + userConfig.cdn.options.directory) : '';
+}
 
 const webpackConfig = {
   mode: process.env.NODE_ENV,
@@ -109,7 +108,7 @@ const webpackConfig = {
     ],
   },
   plugins: [
-    new CleanWebpackPlugin(['dist']),
+    new CleanWebpackPlugin(),
     new MiniCssExtractPlugin({
       filename: isProduction ? '[name].[contenthash].css' : '[name].css',
       chunkFilename: isProduction ? '[id].[contenthash].css' : '[id].css',
